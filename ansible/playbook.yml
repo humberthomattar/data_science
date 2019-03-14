@@ -1,0 +1,13 @@
+---
+- name: Configure an python enviroment, for data science
+  hosts: all
+  connection: local
+  become: yes
+  become_user: root
+  become_method: sudo
+  vars_files:
+    - vars/main.yml
+
+  roles:
+  - default
+  - application

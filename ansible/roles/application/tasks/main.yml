@@ -1,0 +1,17 @@
+---
+  - name: APP | Clone project
+    git:
+      repo: https://github.com/humberthomattar/data_science.git
+      dest: "/home/vagrant/{{ app_name }}/app/"
+      clone: yes
+      update: yes
+    become: yes
+    become_user: vagrant
+  
+  - name: Install requirements
+    pip: 
+      requirements: "/home/vagrant/{{ app_name }}/app/requirements.txt"
+      virtualenv: "/home/vagrant/{{ app_name }}/"
+      virtualenv_python: python3
+    become: yes
+    become_user: vagrant
