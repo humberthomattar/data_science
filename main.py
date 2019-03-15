@@ -13,7 +13,6 @@ def print_banner(texto):
 
 
 def get_conf(file):
-    import yaml
     with open(file, 'r') as ymlfile:
         cfg = yaml.load(ymlfile)
     globals().update(cfg)
@@ -21,7 +20,7 @@ def get_conf(file):
 
 
 def setup_logging(default_path='conf/logging.yaml', default_level=logging.INFO):
-    global logger
+    import coloredlogs
     path = default_path
     if os.path.exists(path):
         with open(path, 'rt') as f:
