@@ -1,4 +1,8 @@
 ---
+  - name: set timezone to America/Sao_Paulo
+    timezone:
+      name: America/Sao_Paulo
+  
   - name: Default | Install default packages
     apt:
       name: 

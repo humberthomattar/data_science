@@ -14,7 +14,7 @@ def print_banner(texto):
 
 def get_conf(file):
     with open(file, 'r') as ymlfile:
-        cfg = yaml.load(ymlfile)
+        cfg = yaml.safe_load(ymlfile)
     globals().update(cfg)
     return
 
@@ -25,7 +25,8 @@ def setup_logging(default_path='conf/logging.yaml', default_level=logging.INFO):
     if os.path.exists(path):
         with open(path, 'rt') as f:
             try:
-                config = yaml.safe_load(f.read(), Loader=yaml.FullLoader)
+                config = yaml.safe_load(f.read())
+                print(config['handlers']
                 logging.config.dictConfig(config)
                 coloredlogs.install()
             except Exception as e:
@@ -37,7 +38,7 @@ def setup_logging(default_path='conf/logging.yaml', default_level=logging.INFO):
         logging.basicConfig(level=default_level)
         coloredlogs.install(level=default_level)
         print('Failed to load configuration file. Using default configs')
-
+    return
 
 #TODO: Export path and file
 def set_statistics():
@@ -76,8 +77,9 @@ def main():
 
 if __name__ == "__main__":
     setup_logging()
+    logger = logging.getLogger('app')
     print_banner("Created by DtpLabs!!")
-    logging.info("This is an info of the root logger")
+    logger.info("This is an info of the root logger")
     get_conf('conf/config.yaml')
     sys.exit(main())
 
