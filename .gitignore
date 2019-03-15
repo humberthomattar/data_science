@@ -107,5 +107,16 @@ venv.bak/
 .vagrant
 .vagrant/
 
+### Ansible ###
+*.retry
+
+### Vagrant ###
+
+### Vagrant Patch ###
+*.box
+
 # CSV files 
 *.csv
+
+### Ansible ###
+*.retry

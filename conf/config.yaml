@@ -1,0 +1,12 @@
+---
+  app:
+    name: "data-science"
+    banner: "Created by Dtp.Labs"
+  
+  # Diretorios e padrão de nome dos arquivos que serão processados
+  files:
+    in: './data/'
+    filename: 'biometria-tse-dataprev.csv'
+    out: './saida/'
+    type: 'csv'
+  
