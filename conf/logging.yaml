@@ -18,8 +18,8 @@ handlers:
         class: logging.handlers.RotatingFileHandler
         level: INFO
         formatter: standard
-        filename: ../logs/info.log
-        maxBytes: 104857600 # 10MB
+        filename: logs/info.log
+        maxBytes: 104857600 # 100MB
         backupCount: 20
         encoding: utf8
 
@@ -27,8 +27,8 @@ handlers:
         class: logging.handlers.RotatingFileHandler
         level: ERROR
         formatter: error
-        filename: ../logs/errors.log
-        maxBytes: 104857600 # 10MB
+        filename: logs/errors.log
+        maxBytes: 104857600 # 100MB
         backupCount: 20
         encoding: utf8
 
@@ -36,8 +36,8 @@ handlers:
         class: logging.handlers.RotatingFileHandler
         level: DEBUG
         formatter: standard
-        filename: ../logs/debug.log
-        maxBytes: 104857600 # 10MB
+        filename: logs/debug.log
+        maxBytes: 104857600 # 100MB
         backupCount: 20
         encoding: utf8
 
@@ -45,8 +45,8 @@ handlers:
         class: logging.handlers.RotatingFileHandler
         level: CRITICAL
         formatter: standard
-        filename: ../logs/critical.log
-        maxBytes: 104857600 # 10MB
+        filename: logs/critical.log
+        maxBytes: 104857600 # 100MB
         backupCount: 20
         encoding: utf8
 
@@ -54,8 +54,8 @@ handlers:
         class: logging.handlers.RotatingFileHandler
         level: WARN
         formatter: standard
-        filename: ../logs/warn.log
-        maxBytes: 104857600 # 10MB
+        filename: logs/warn.log
+        maxBytes: 104857600 # 100MB
         backupCount: 20
         encoding: utf8
 

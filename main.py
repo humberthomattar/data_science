@@ -25,7 +25,7 @@ def setup_logging(default_path='conf/logging.yaml', default_level=logging.INFO):
     if os.path.exists(path):
         with open(path, 'rt') as f:
             try:
-                config = yaml.safe_load(f.read())
+                config = yaml.safe_load(f.read(), Loader=yaml.FullLoader)
                 logging.config.dictConfig(config)
                 coloredlogs.install()
             except Exception as e:
