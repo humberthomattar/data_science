@@ -13,7 +13,7 @@ def print_banner(texto):
     try:
         import pyfiglet
         print(pyfiglet.figlet_format(texto))
-    execept Exception as e:
+    except Exception as e:
         logger.erro('print_banner: ' + str(e))
     return
 

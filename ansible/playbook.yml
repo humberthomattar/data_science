@@ -1,7 +1,7 @@
 ---
 - name: Configure an python enviroment, for data science
-  hosts: localhost
-  connection: localhost
+  hosts: 127.0.0.1
+  connection: local
   become: yes
   become_user: root
   become_method: sudo
