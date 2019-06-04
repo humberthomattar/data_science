@@ -31,6 +31,7 @@ def get_conf(file):
         logger.error('get_conf: ' + str(e))
     return
 
+
 def setup_logging(loggername, path='./conf/logging.yaml', default_level='DEBUG'):
     import coloredlogs
     try:
@@ -82,8 +83,11 @@ def set_statistics(filename):
         import numpy as np
         import pandas as pd
         df = pd.read_csv(filename)
+        pd.set_option('colheader_justify', 'center')
         vars = {
-            "describe": df.describe().to_html()
+            "describe": df.describe().to_html(
+                classes='table table-hover table-sm'
+                )
             }
         logger.info('Término da análise do arquivo.')
         return vars

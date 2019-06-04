@@ -115,8 +115,10 @@ venv.bak/
 ### Vagrant Patch ###
 *.box
 
-# CSV files 
+# data files 
+*.txt
 *.csv
+*.zip
 
 ### Ansible ###
 *.retry
